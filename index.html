@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c56502c682.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Zadanie rekrutacyjne</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section section-1">
+        <label id="company-label" class="hide input-placeholder">Nazwa firmy</label>
+        <input
+          class="input-field"
+          type="text"
+          id="company"
+          placeholder="Nazwa firmy"
+        />
+        <p class="textError hide">Błąd</p>
+        <label id="employee-label" class="hide input-placeholder"
+            >Pracownik</label
+          >
+        <div class="dropdown">
+          <button
+            id="dropdown-btn"
+            class="dropbtn input-field"
+          >
+            Pracownik <i class="employee-icon fas fa-angle-down"></i>
+          </button>
+          <div id="my-dropdown" class="dropdown-content">
+            <input
+              type="text"
+              placeholder="Szukaj"
+              id="my-input"
+              onkeyup="filterFunction()"
+            />
+            <hr id="dropdown-hr" />
+            <a class="employee-container"
+              ><img class="emplayee-img" src="img/img_1.png" />
+              <p class="employee-text">Adam Nowak</p>
+              <i class="check-icon hide fas fa-check"></i
+            ></a>
+            <a class="employee-container"
+              ><img class="emplayee-img" src="img/img_2.png" />
+              <p class="employee-text">Michał Potoczek</p>
+              <i class="check-icon hide fas fa-check"></i
+            ></a>
+            <a class="employee-container"
+              ><img class="emplayee-img" src="img/img_3.png" />
+              <p class="employee-text">Antoni Worek</p>
+              <i class="check-icon hide fas fa-check"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <hr id="section-hr" />
+      <div class="section section-2">
+        <h3 id="tasks">Zadania</h3>
+        <label id="task-label" class="hide input-placeholder"
+          >Nazwa zadania</label
+        >
+        <input
+          class="input-field"
+          type="text"
+          id="task"
+          placeholder="Nazwa zadania"
+        />
+        <p id="task-error" class="textError hide">Wpisz minimum 5 znaków</p>
+        <label id="amount-label" class="hide input-placeholder"
+          >Kwota w PLN</label
+        >
+        
+        <!-- Used custom validator instead of type=number because type=number allows commas, and the requirement is to allow digits only -->
+        <input
+          class="input-field"
+          type="text" 
+          id="pln_amount"
+          placeholder="Kwota w PLN"
+        />
+        
+        <p id="amount-error" class="textError hide">Bląd</p>
+        <div id="adding-item">
+          <p id="exrate">1 euro = <span id="exrate-amount">4.8282</span></p>
+          <button id="addbtn" class="disabled" disabled="true">Dodaj</button>
+        </div>
+      </div>
+      <div class="section">
+        <table>
+           <thead>
+            <tr>
+               <th class="sortable">Nazwa zadania <i class="fas fa-sort"></i></th>
+               <th class="sortable">Kwota w PLN <i class="fas fa-sort"></i></th>
+               <th class="sortable">Kwota w EUR <i class="fas fa-sort"></i></th>
+               <th>Opcje</th>
+             </tr>
+           </thead>
+           <tbody></tbody>
+        </table>
+        <p id="sum">Suma: <span id="pln-sum"></span> PLN (<span id="eur-sum"></span> EUR)</p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
