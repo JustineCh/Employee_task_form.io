@@ -17,7 +17,9 @@
   <body>
     <div class="container">
       <div class="section section-1">
-        <label id="company-label" class="hide input-placeholder">Nazwa firmy</label>
+        <label id="company-label" class="hide input-placeholder"
+          >Nazwa firmy</label
+        >
         <input
           class="input-field"
           type="text"
@@ -26,13 +28,10 @@
         />
         <p class="textError hide">Błąd</p>
         <label id="employee-label" class="hide input-placeholder"
-            >Pracownik</label
-          >
+          >Pracownik</label
+        >
         <div class="dropdown">
-          <button
-            id="dropdown-btn"
-            class="dropbtn input-field"
-          >
+          <button id="dropdown-btn" class="dropbtn input-field">
             Pracownik <i class="employee-icon fas fa-angle-down"></i>
           </button>
           <div id="my-dropdown" class="dropdown-content">
@@ -77,15 +76,15 @@
         <label id="amount-label" class="hide input-placeholder"
           >Kwota w PLN</label
         >
-        
+
         <!-- Used custom validator instead of type=number because type=number allows commas, and the requirement is to allow digits only -->
         <input
           class="input-field"
-          type="text" 
+          type="text"
           id="pln_amount"
           placeholder="Kwota w PLN"
         />
-        
+
         <p id="amount-error" class="textError hide">Bląd</p>
         <div id="adding-item">
           <p id="exrate">1 euro = <span id="exrate-amount">4.8282</span></p>
@@ -94,17 +93,21 @@
       </div>
       <div class="section">
         <table>
-           <thead>
+          <thead>
             <tr>
-               <th class="sortable">Nazwa zadania <i class="fas fa-sort"></i></th>
-               <th class="sortable">Kwota w PLN <i class="fas fa-sort"></i></th>
-               <th class="sortable">Kwota w EUR <i class="fas fa-sort"></i></th>
-               <th>Opcje</th>
-             </tr>
-           </thead>
-           <tbody></tbody>
+              <th class="sortable">
+                Nazwa zadania <i class="fas fa-sort"></i>
+              </th>
+              <th class="sortable">Kwota w PLN <i class="fas fa-sort"></i></th>
+              <th class="sortable">Kwota w EUR <i class="fas fa-sort"></i></th>
+              <th>Opcje</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
         </table>
-        <p id="sum">Suma: <span id="pln-sum"></span> PLN (<span id="eur-sum"></span> EUR)</p>
+        <p id="sum">
+          Suma: <span id="pln-sum"></span> PLN (<span id="eur-sum"></span> EUR)
+        </p>
       </div>
     </div>
     <script src="app.js"></script>

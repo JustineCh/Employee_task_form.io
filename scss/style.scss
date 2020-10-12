@@ -52,7 +52,8 @@ body {
       outline: none;
     }
 
-    input:focus {
+    input:focus,
+    button:focus {
       border: 1px solid #00447c;
     }
 
@@ -81,7 +82,7 @@ body {
       .employee-icon {
         padding-left: 175px;
       }
-    } 
+    }
 
     #dropdown-hr {
       border: 0;
@@ -232,11 +233,9 @@ body {
       border-radius: 3px;
 
       &:disabled {
-         background-color: #4f4f4f !important;
+        background-color: #4f4f4f !important;
       }
     }
-
-
 
     table {
       border-collapse: collapse;
@@ -261,11 +260,11 @@ body {
     }
 
     #sum {
-       font-size: 18px;
-       
-       span {
-          font-size: 18px;
-       }
+      font-size: 18px;
+
+      span {
+        font-size: 18px;
+      }
     }
   }
 }

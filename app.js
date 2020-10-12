@@ -108,8 +108,8 @@ const amountValidator = function (e) {
 
 const amountCorrect = function (amount) {
   const pattern = new RegExp("^[0-9]+$");
-  console.log(amount)
-  return pattern.test(amount)
+  console.log(amount);
+  return pattern.test(amount);
 };
 const taskNameCorrect = function (taskName) {
   return taskName.length > 4;
