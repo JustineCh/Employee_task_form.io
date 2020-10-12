@@ -21,5 +21,6 @@
 ## Assumptions:
 -- client browser supports ES6
 -- if libraries would be allowed, for financial aspect of the app I would use decimal library to avoid floating errors
+-- employee form and task form are completely independent
 -- keyboard is used only for filling out the inputs
 -- input "Kwota w PLN" accept only digits
