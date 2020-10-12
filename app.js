@@ -59,6 +59,7 @@ const employeePicked = function (e) {
 const showElement = function (el) {
   el.classList.remove("hide");
 };
+
 const companyValidator = function (e) {
   const companyText = e.target.value;
   if (companyText === "") {
@@ -111,6 +112,7 @@ const amountCorrect = function (amount) {
   console.log(amount);
   return pattern.test(amount);
 };
+
 const taskNameCorrect = function (taskName) {
   return taskName.length > 4;
 };
