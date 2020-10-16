@@ -30,6 +30,12 @@ function dropdownToggle() {
   dropdown.classList.toggle("show");
 }
 
+const closeDropdown = function(e) {
+  if (e.target !== employeeDropdown && e.target !== employeeDropdown.children.item(0)){
+    dropdown.classList.remove("show");
+  } 
+}
+
 function filterFunction() {
   var input, filter, as, i;
   input = document.getElementById("my-input");
@@ -192,6 +198,7 @@ updateSum();
 company.addEventListener("keyup", companyValidator);
 company.addEventListener("blur", companyValidator);
 employeeDropdown.addEventListener("click", dropdownToggle);
+document.addEventListener('click', closeDropdown)
 employeeLinks.forEach(item => {
   item.addEventListener("click", employeePicked);
 });
