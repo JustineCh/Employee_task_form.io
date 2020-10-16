@@ -31,18 +31,18 @@ function dropdownToggle() {
 }
 
 function filterFunction() {
-  var input, filter, a, i;
+  var input, filter, as, i;
   input = document.getElementById("my-input");
   filter = input.value.toUpperCase();
-  a = dropdown.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
+  as = Array.from(dropdown.getElementsByTagName("a"));
+  as.forEach(a => {
+    txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
+      a.style.display = "";
     } else {
-      a[i].style.display = "none";
+      a.style.display = "none";
     }
-  }
+  });
 }
 
 const employeePicked = function (e) {
@@ -91,7 +91,6 @@ const taskValidator = function () {
 };
 
 const amountValidator = function (e) {
-  console.log(amountCorrect(e.target.value));
   if (amountCorrect(e.target.value)) {
     amountError.classList.add("hide");
     amount.classList.remove("textErrorBorder");
@@ -109,7 +108,6 @@ const amountValidator = function (e) {
 
 const amountCorrect = function (amount) {
   const pattern = new RegExp("^[0-9]+$");
-  console.log(amount);
   return pattern.test(amount);
 };
 
@@ -168,7 +166,7 @@ const comparer = (idx, asc) => (a, b) =>
   );
 
 document.querySelectorAll(".sortable").forEach(th =>
-  th.addEventListener("click", e => {
+  th.addEventListener("click", () => {
     const table = th.closest("table");
     const tbody = table.querySelector("tbody");
     const arrow = th.querySelector("i");
