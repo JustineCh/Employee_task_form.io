@@ -1,4 +1,5 @@
 const dropdown = document.getElementById("my-dropdown");
+const dropdownInput = document.getElementById("my-input");
 const company = document.getElementById("company");
 const textError = document.querySelector(".textError");
 const employeeLinks = document.querySelectorAll(".employee-container");
@@ -31,8 +32,11 @@ function dropdownToggle() {
 }
 
 const closeDropdown = function(e) {
-  if (e.target !== employeeDropdown && e.target !== employeeDropdown.children.item(0)){
+  const searchInput = document.getElementById("my-input")
+  if (e.target !== employeeDropdown && e.target !== employeeDropdown.children.item(0) && e.target !== searchInput ){
     dropdown.classList.remove("show");
+    searchInput.value = '';
+    filterFunction()
   } 
 }
 
@@ -141,7 +145,7 @@ const addRow = function () {
       <td class="pln-amount">${amountValue}</td>
       <td class="eur-amount">${eurAmount}</td>
       <td>
-         <a class="delete-row"><i class="fas fa-trash"></i> Usuń</a>
+         <a class="delete-row"><i class="fas fa-trash"></i> Delete</a>
       </td>
    </tr>
    `;
@@ -198,6 +202,7 @@ updateSum();
 company.addEventListener("keyup", companyValidator);
 company.addEventListener("blur", companyValidator);
 employeeDropdown.addEventListener("click", dropdownToggle);
+dropdownInput.addEventListener('keyup', filterFunction)
 document.addEventListener('click', closeDropdown)
 employeeLinks.forEach(item => {
   item.addEventListener("click", employeePicked);
