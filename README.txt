@@ -1,3 +1,5 @@
+## To view the site go to: https://justinech.github.io/Employee_task_form.io/
+
 ## To use Sass:
 -- if using VS Code already, install extension "Live Sass Compiler"
 -- in the settings, add below:
